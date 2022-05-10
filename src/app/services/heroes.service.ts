@@ -59,7 +59,7 @@ export class HeroesService {
     console.log('Servicio listo para usar...');
   }
 
-  getHeroes(){
+  getHeroes(): heroe[]{
     return this.heroes;
   }
 }
