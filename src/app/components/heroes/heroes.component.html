@@ -1,63 +1,17 @@
 <h1 class="animated fadeIn fast">Héroes <small>Marvel y DC</small></h1>
 <hr />
 <div class="card-group">
-  <div class="card">
-    <img
-      class="card-img-top img-fluid"
-      src="assets/img/spiderman.png"
-      alt="Card image cap"
-    />
+  <div class="card animated fadeIn fast" *ngFor="let hero of heroes; let i = index">
+    <img class="card-img-top img-fluid" [src]="hero.img" [alt]="hero.nombre" />
     <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content.
-      </p>
-      <div class="d-grid gap-2">
-        <button class="btn btn-outline-primary" type="button">Ver más</button>
+      <h4 class="card-title">{{ hero.nombre }}</h4>
+      <p class="card-text">{{ hero.bio }}</p>
+      <div class="d-grid gap-2">        
+        <button class="btn btn-outline-primary" (click)="verHeroe(i)">Ver más</button>
+        <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary">Ver más...</a> -->
       </div>
       <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <img
-      class="card-img-top img-fluid"
-      src="assets/img/batman.png"
-      alt="Card image cap"
-    />
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content.
-      </p>
-      <div class="d-grid gap-2">
-        <button class="btn btn-outline-primary" type="button">Ver más</button>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <img
-      class="card-img-top img-fluid"
-      src="assets/img/wolverine.png"
-      alt="Card image cap"
-    />
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content.
-      </p>
-      <div class="d-grid gap-2">
-        <button class="btn btn-outline-primary" type="button">Ver más</button>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">{{ hero.aparicion }}</small>
       </div>
     </div>
   </div>
